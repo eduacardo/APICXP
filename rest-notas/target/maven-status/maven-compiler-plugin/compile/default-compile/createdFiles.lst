@@ -1,0 +1,7 @@
+br\edu\devmedia\dao\NotaDAO.class
+br\edu\devmedia\config\BDConfig.class
+br\edu\devmedia\entidade\Cliente.class
+br\edu\devmedia\rest\NotaService.class
+br\edu\devmedia\entidade\Nota.class
+br\edu\devmedia\dao\ClienteDAO.class
+br\edu\devmedia\rest\ClienteService.class

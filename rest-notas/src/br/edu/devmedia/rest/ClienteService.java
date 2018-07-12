@@ -58,7 +58,15 @@ public class ClienteService {
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Cliente buscarPorId(@PathParam("cli_id") int idCliente) {
-
+		
+		Cliente cliente = new Cliente();
+		cliente.setDsCpf("04367462633");
+		cliente.setDsNome("Eduardo Cardoso");
+		cliente.setDtNascimento("19820502");
+		
+		return cliente;
+		
+		/*
 		Cliente cliente = null;
 		try {
 			cliente = clienteDAO.buscarClientePorId(idCliente);
@@ -67,6 +75,7 @@ public class ClienteService {
 		}
 
 		return cliente;
+		*/
 	}
 
 }
