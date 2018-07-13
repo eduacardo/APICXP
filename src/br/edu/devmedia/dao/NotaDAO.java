@@ -29,6 +29,9 @@ public class NotaDAO {
 
 			lista.add(nota);
 		}
+		
+		statement.close();
+		conexao.close();
 
 		return lista;
 	}
@@ -51,6 +54,9 @@ public class NotaDAO {
 			nota.setDescricao(rs.getString("DESCRICAO"));
 		}
 
+		statement.close();
+		conexao.close();
+		
 		return nota;
 	}
 
@@ -64,6 +70,9 @@ public class NotaDAO {
 		statement.setString(1, nota.getTitulo());
 		statement.setString(2, nota.getDescricao());
 		statement.execute();
+		
+		statement.close();
+		conexao.close();
 	}
 
 	public void editarNota(Nota nota, int idNota) throws Exception {
@@ -76,6 +85,9 @@ public class NotaDAO {
 		statement.setString(2, nota.getDescricao());
 		statement.setInt(3, idNota);
 		statement.execute();
+		
+		statement.close();
+		conexao.close();
 	}
 
 	public void removerNota(int idNota) throws Exception {
@@ -86,6 +98,9 @@ public class NotaDAO {
 		PreparedStatement statement = conexao.prepareStatement(sql);
 		statement.setInt(1, idNota);
 		statement.execute();
+		
+		statement.close();
+		conexao.close();
 	}
 
 }

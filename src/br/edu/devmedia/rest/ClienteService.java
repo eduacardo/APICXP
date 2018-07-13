@@ -34,6 +34,8 @@ public class ClienteService {
 			lista = clienteDAO.listarClientes();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			
 		}
 		return lista;
 	}

@@ -31,6 +31,9 @@ public class ClienteDAO {
 
 			lista.add(cliente);
 		}
+		
+		statement.close();
+		conexao.close();
 
 		return lista;
 	}
@@ -54,6 +57,9 @@ public class ClienteDAO {
 			cliente.setDsCpf(rs.getString("CLI_CPF"));
 			cliente.setDtNascimento(rs.getString("CLI_DATA_NASCIMENTO"));
 		}
+		
+		statement.close();
+		conexao.close();
 
 		return cliente;
 	}
@@ -78,6 +84,9 @@ public class ClienteDAO {
 			cliente.setDtNascimento(rs.getString("CLI_DATA_NASCIMENTO"));
 		}
 
+		statement.close();
+		conexao.close();
+		
 		return cliente;
 	}
 
