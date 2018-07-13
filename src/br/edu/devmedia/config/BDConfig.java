@@ -8,13 +8,13 @@ public class BDConfig {
 
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 
-		String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/notes_db";
-		String DATABASE_USER = "root";
-		String DATABASE_PASSWORD = "12345";
+		String DATABASE_URL = "jdbc:mariadb://nt71li6axbkq1q6a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/d8nh9cxk373rv5xb";
+		String DATABASE_USER = "k3flcw2gglu6jlwk";
+		String DATABASE_PASSWORD = "u70bdmz4nchr5fv2";
 
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("org.mariadb.jdbc.Driver");
 		return DriverManager.getConnection(DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD);
-
+		
 	}
 
 }
