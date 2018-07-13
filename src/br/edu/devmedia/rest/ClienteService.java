@@ -5,15 +5,16 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.devmedia.dao.ClienteDAO;
-import br.edu.devmedia.dao.NotaDAO;
+
 import br.edu.devmedia.entidade.Cliente;
-import br.edu.devmedia.entidade.Nota;
+
 
 @Path("/clientes")
 public class ClienteService {
@@ -39,12 +40,14 @@ public class ClienteService {
 		}
 		return lista;
 	}
-
-	@GET
-	@Path("/buscaPorCpf/{dsCpf}")
-	@Consumes(MediaType.TEXT_PLAIN)
+	
+	
+	@POST
+	@Path("/buscaPorCpf")
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Cliente buscarPorId(@PathParam("dsCpf") String cpf) {
+	public Cliente buscarPorId(String cpf) {
+		System.out.println(cpf);
 		Cliente cliente = null;
 		try {
 			cliente = clienteDAO.buscaPorCpf(cpf);
@@ -55,9 +58,9 @@ public class ClienteService {
 		return cliente;
 	}
 
-	@GET
-	@Path("/get/{cli_id}")
-	@Consumes(MediaType.TEXT_PLAIN)
+	@POST
+	@Path("/get")
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Cliente buscarPorId(@PathParam("cli_id") int idCliente) {
 		
